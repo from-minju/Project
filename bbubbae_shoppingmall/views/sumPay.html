@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+</head>
+
+<body>
+
+    <a href="http://localhost:{{port}}">
+        <h1>{{title}}</h1> 
+    </a>   
+    
+    <form>
+        <a href="http://localhost:{{port}}/user/login">로그인</a>
+        <a href="http://localhost:{{port}}/user/register">회원가입</a>
+        <a href="http://localhost:{{port}}/user/mypage">마이페이지</a>
+        <a href="http://localhost:{{port}}/product">상품보기</a>
+        <a href="http://localhost:{{port}}">메인화면</a>
+    </form>
+
+    
+    <p>
+        <strong>{{user.name}}</strong>님 주문이 완료되었습니다.<br><br>
+
+        <h1 style="display: inline;"> {{totalPrice}}원</h1> 입금해주세요.
+        
+        <h3>신한 110-499-777202 이성연</h3>
+        <h3>국민 503202-01-227451 강민주</h3>
+
+        [주문서] <br>
+        주문번호 : {{order.id}}<br>
+        주문상품 : {{product.name}}<br>
+        배송지 : {{order.addr}}<br>
+        
+        <img src="http://localhost:{{port}}/05_sum.jpg" width="700" height="300" alt="리즈수민" />
+
+    </p>
+
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+</head>
+
+<body>
+
+    <a href="http://localhost:{{port}}">
+        <h1>{{title}}</h1> 
+    </a>
+    
+    <form>
+        <a href="http://localhost:{{port}}">메인화면</a>
+        
+    </form>
+
+    <br>
+    <strong>{{user.name}}</strong>님 환영합니다! <br>
+    <a href="http://localhost:{{port}}/user/logout">로그아웃</a>
+    <br><br>
+            
+    <br>
+    <h3>[사용자 정보]</h3> <br>
+    아이디 : {{user.id}}<br>
+    이름 : {{user.name}}<br>
+    주소 : {{user.addr}}<br>
+    전화번호 : {{user.ph}}<br><br>
+            
+    <h3>[주문내역]</h3> <br>
+
+    {% for od in order %}    
+        [ 주문번호: {{od.id}} ] 상품이름: {{od.op_id}} | 수량: {{od.cnt}} | 배송지: {{od.addr}}
+        <br>      
+    {% endfor %}
+       
+    
+</body>
+
+</html>

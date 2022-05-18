@@ -1,0 +1,47 @@
+<!-- 상품목록페이지 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+</head>
+
+<body>
+
+    <a href="http://localhost:{{port}}">
+        <h1>{{title}}</h1> 
+    </a>    
+    
+    <form>
+        <a href="http://localhost:{{port}}/user/login">로그인</a>
+        <a href="http://localhost:{{port}}/user/register">회원가입</a>
+        <a href="http://localhost:{{port}}/user/mypage">마이페이지</a>
+    </form>
+
+    {% if user %}
+        {{user.name}}님 환영합니다! <br>
+        <a href="http://localhost:{{port}}/user/logout">로그아웃</a> 
+    {% else %}
+    {% endif %} 
+    <br><br>
+            
+    {% for product in product %}
+        <img src="http://localhost:{{port}}/{{product.img}}.jpg" width="400" height="400" alt="김이다" />
+
+        <form id="form" action="" method="post">
+        <a href="http://localhost:{{port}}/order/buy/{{product.id}}">바로 구매하기</a>
+        </form>
+
+        <br>
+        {{product.name}}
+        <br>
+        {{product.price}}
+        <br><br>
+        {{product.description}}
+    {% endfor %}
+    <br>
+    
+</body>
+
+</html>
